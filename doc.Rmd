@@ -1,0 +1,78 @@
+---
+output: 
+    pdf_document:
+      toc: no
+      number_sections: true
+#csl: apa.csl
+#bibliography: references.bib
+header-includes:
+   - \usepackage{amsmath}
+   - \usepackage{amsfonts}
+   - \usepackage{amssymb}
+   - \usepackage{graphicx}
+   - \usepackage{cancel}
+   - \usepackage{natbib}
+   - \usepackage{float}
+   - \usepackage{multirow}
+   - \usepackage{framed}
+   - \usepackage{amsthm}
+   - \usepackage{enumerate}
+   - \usepackage{textgreek}
+   - \usepackage{caption}
+   - \usepackage{multirow}
+   - \usepackage{epstopdf}
+   - \usepackage{capt-of}
+   - \usepackage{booktabs}
+   - \usepackage{subfigure}
+   - \usepackage{array}
+   - \usepackage{lscape}
+   - \usepackage{dcolumn}
+   - \usepackage{titling}
+   - \renewcommand{\rmdefault}{phv} 
+   - \renewcommand{\sfdefault}{phv}
+
+
+fig_caption: true
+geometry: top=3cm, bottom=3cm, left=3cm, right=3cm 
+fontsize: 12pt
+urlcolor: blue
+linkcolor: black
+citecolor: black
+sansfont: Calibri Light
+
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+\begin{titlepage}
+\begin{center}
+\textbf{Título } \\
+\end{center}
+\vspace{0.5cm}
+\raggedleft
+\begin{center}
+\begin{tabular}{l}
+\and
+\textbf{Mansilla, Kevin Gaston}\\
+ Universidad Nacional de Cordoba\\ 
+\href{mailto:kevin.mansilla@mi.unc.edu.ar}{kevin.mansilla@mi.unc.edu.ar}
+\and 
+\end{tabular}
+\end{center}
+\vspace{0.5cm}
+\begin{center}
+\date{Fecha}
+\end{center}
+\bigskip
+
+\begin{abstract}
+aaaaaaaaaaaaaaaaaaaaaaaaa
+\end{abstract}
+\end{titlepage}
+
+
+\pagenumbering{arabic} 
+
+
