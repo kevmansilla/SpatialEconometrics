@@ -52,47 +52,40 @@ citecolor: black
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
-\pagestyle{empty}
-\begin{titlepage}
-
-\begin{center}
-\vspace*{-1in}
-\begin{figure}[htb]
-\begin{center}
-\includegraphics[width=8cm]{pictures/logo}
-\end{center}
-\end{figure}
-
-FACULTAD DE CIENCIAS ECON\'OMICAS.\\
-\vspace*{0.15in}
-UNIVERSIDAD NACIONAL DE C\'ORDOBA. \\
-\vspace*{0.6in}
-\begin{large}
-LICENCIATURA EN ECONOM\'IA.\\
-\end{large}
-\vspace*{0.2in}
-\begin{Large}
-\textbf{ECONOMETR\'IA I.} \\
-\end{Large}
-\vspace*{0.3in}
-\begin{large}
-GU\'IA DE EJERCICIOS COMPLEMENTARIOS.\\
-\end{large}
-\vspace*{0.3in}
-\rule{80mm}{0.1mm}\\
-\vspace*{0.1in}
-\begin{large}
-Mansilla, Kevin Gaston \\
-\begin{scriptsize} 
-Legajo: 37.693.722 \\ Email: \href{mailto:kevingston47@gmail.com}{kevingston47@gmail.com} \\
-\end{scriptsize}
-\vspace*{1.0in}
-Agosto 2018\\
-\end{large}
-\end{center}
+<!-- \pagestyle{empty} -->
+<!-- \begin{titlepage} -->
+<!-- \begin{center} -->
+<!-- \begin{huge} -->
+<!-- Facultad de Ciencias Económicas -->
+<!-- \end{huge} -->
+<!-- \medskip -->
+<!-- \begin{LARGE} -->
+<!-- Universidad Nacional De Córdoba -->
+<!-- \end{LARGE} -->
+<!-- \end{center} -->
+<!-- \medskip -->
+<!-- \vspace*{0in} -->
+<!-- \begin{figure}[h!] -->
+<!-- \begin{center} -->
+<!-- \includegraphics[width=4cm]{pictures/logo} -->
+<!-- \end{center} -->
+<!-- \end{figure} -->
+<!-- \begin{center} -->
+<!-- \begin{Large} -->
+<!-- titulo de tesis. -->
+<!-- \end{Large} -->
+<!-- \end{center} -->
+<!-- \vspace*{0.1in} -->
+<!-- \begin{center} -->
+<!-- \begin{large} -->
+<!-- Mansilla, Kevin Gaston \\ -->
+<!-- \end{large} -->
+<!-- Director: .... -->
+<!-- \end{center} -->
+<!-- \end{titlepage} -->
 
 
-\end{titlepage}
+\newpage
 
 \tableofcontents
 \listoffigures
@@ -122,7 +115,6 @@ Por el contrario, se dice que existe autocorrelación espacial negativa cuando l
 En los análisis de autocorrelación espacial se necesita una medida de contigüidad que podemos definirla de manera general como una relación de vecindad, estas pueden ser de tres tipos, caso de torre, caso de alfil y caso de la reina. Un aspecto crucial de la definición de la autocorrelación espacial es la determinación de las ubicaciones cercanas, es decir, aquellas ubicaciones que rodean un punto de datos que podría considerarse que influyen en la observación en ese punto de datos. 
 
 Sin embargo, la determinación de este vecindario tiene un cierto grado de arbitrariedad. El número de observaciones en el vecindario establecido para cada ubicación puede expresarse mediante una matriz de ponderaciones $W$, que describe la conectividad entre n unidades que se encuentran localizadas en un espacio bidimensional.
-
 \begin{equation*}
 \begin{bmatrix}
 W_{11} & W_{12} & \ldots & W_{1n}\\
@@ -137,7 +129,6 @@ donde $n$ representa el número de ubicaciones. La entrada en la fila $i$ y colu
 Nosotros nos basaremos en la distancia euclídea (tipo reina), este método considera vecinas dos áreas si cumplen cierta propiedad referente a la distancia que las separa. Nos referimos a la distancia entre dos regiones como la distancia entre sus puntos representativos (centroides).  
 
 Al establecer un centroide en cada provincia se detectó que en el caso de contigüidad tipo reina la provincia de tierra del fuego quedaba desconectada del resto, esto es porque esté criterio no obliga a los polígonos que se encuentran aislados geográficamente a relacionarse o conectarse con los demás.  Una solución común a este problema es restringir la estructura contigua a los $k-$vecinos más cercanos, en nuestro caso $k=4$, y por lo tanto excluir las 'islas' (áreas que por no estar a una distancia d de otra área se podría decir que no tiene vecinos) y forzar a cada unidad de área a tener el mismo número $k$ de vecinos. Formalmente 
-
 \begin{displaymath}W_{ij} = \left\{ \begin{array}{ll}1 & \mbox{Si el centroide de $j$ es uno de los $k$ centroides más cercanos al de $i$} \\0 & \mbox{c.c}\end{array}\right.\end{displaymath}
 
 Una vez definida la matriz de contactos, pueden utilizarse diferentes estadísticos univariantes que permiten detectar autocorrelación espacial. Los mismos pueden clasificarse como medidas de dependencia globales o locales. Las medidas globales utilizan la información completa del conjunto de datos con el fin de obtener un valor promedio para todo el espacio geográfico. Al resumir en un único valor toda la información, no es posible detectar la variabilidad de la dependencia ni la localización de estos patrones. Por su parte, las medidas locales examinan la autocorrelación espacial en un subconjunto de datos. 
@@ -153,8 +144,10 @@ $$S_{hausman} = NT(\widehat{\beta}_{MCG} - \widehat{\beta}_{Within})' \left( \su
 donde $\widehat{\beta}_{MCG}$ y $\widehat{\beta}_{Within}$ son los parametros estimados por GLS y within respectivamente, $\sum_{Within}-\sum_{MCG}$ se corresponden a las matriz de varianza y covarianzas de los dos estimadores.
 
 A su vez, también presentaremos otros test que nos ayudaran a elegir la especificación más adecuada para estimar nuestro modelo, como los test I de Morán y Multiplicadores de lagrange. Por lo que partimos de un modelo estático (el más simple posible):
-$$y = X\beta + \mu$$
-$$\mu \sim (0, \sigma^{2} I_{n})$$
+\begin{align*}
+y = X\beta + \mu \\
+\mu \sim (0, \sigma^{2} I_{n})
+\end{align*}
 siendo la variable dependiente $y$ un vector de dimensión $(n × 1)$, $X$ es una matriz de variables expicativas, incluyendo una constante, de orden $(n × k)$, $\beta$ es un vector de parámetros desconocidos de orden $(k × 1)$ y $\mu$ es el término de error de dimendición $(n × 1)$. 
 
 La presencia de estructura espacial en el modelo anterior puede contrastarse en base a estadísticos simples que utilizan resultados de estimación por mínimos cuadrados ordinarios (MCO). Uno de estos contrastes es el test I de Moran que se aplica a los residuos del modelo, sugerido por @cliffspatial:
@@ -292,6 +285,7 @@ En cuanto a los coeficientes estimados, llegamos a la conclución de que tanto l
 
 \begin{table}[h!]
 \caption{Modelo}
+\centering
 \label{tab:modelos}
 \begin{tabular}{@{}ccc@{}}
 \toprule
@@ -302,10 +296,12 @@ log(Pob)           & 0.863431***  & 0.0718612*            \\
 $\lambda$          & -            & 0.9770277***          \\
 Observaciones      & 624          & 624                   \\ \bottomrule
 \end{tabular}
+
 \begin{scriptsize}
 \textit{Fuente: Elaboraci\'on propia.}
 \end{scriptsize}
 \end{table}
+
 
 \newpage
 # Conclusiones preliminares

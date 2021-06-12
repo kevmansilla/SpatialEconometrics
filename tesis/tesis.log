@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.6.5)  6 JUN 2021 00:59
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.6.9)  12 JUN 2021 16:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -205,7 +205,7 @@ File: svgnam.def 2016/05/11 v2.12 Predefined colors according to SVG 1.1 (UK)
 ) (/home/kev/.TinyTeX/texmf-dist/tex/latex/xcolor/x11nam.def
 File: x11nam.def 2016/05/11 v2.12 Predefined colors according to Unix/X11 (UK)
 )) (/home/kev/.TinyTeX/texmf-dist/tex/latex/hyperref/hyperref.sty
-Package: hyperref 2021-02-27 v7.00k Hypertext links for LaTeX
+Package: hyperref 2021-06-07 v7.00m Hypertext links for LaTeX
 (/home/kev/.TinyTeX/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
 Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
 ) (/home/kev/.TinyTeX/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
@@ -239,9 +239,9 @@ Package: kvoptions 2020-10-07 v3.14 Key value format for package options (HO)
 \Hy@linkcounter=\count285
 \Hy@pagecounter=\count286
 (/home/kev/.TinyTeX/texmf-dist/tex/latex/hyperref/pd1enc.def
-File: pd1enc.def 2021-02-27 v7.00k Hyperref: PDFDocEncoding definition (HO)
+File: pd1enc.def 2021-06-07 v7.00m Hyperref: PDFDocEncoding definition (HO)
 ) (/home/kev/.TinyTeX/texmf-dist/tex/latex/hyperref/hyperref-langpatches.def
-File: hyperref-langpatches.def 2021-02-27 v7.00k Hyperref: patches for babel la
+File: hyperref-langpatches.def 2021-06-07 v7.00m Hyperref: patches for babel la
 nguages
 ) (/home/kev/.TinyTeX/texmf-dist/tex/generic/intcalc/intcalc.sty
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
@@ -250,7 +250,7 @@ Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
 )
 \Hy@SavedSpaceFactor=\count287
 (/home/kev/.TinyTeX/texmf-dist/tex/latex/hyperref/puenc.def
-File: puenc.def 2021-02-27 v7.00k Hyperref: PDF Unicode definition (HO)
+File: puenc.def 2021-06-07 v7.00m Hyperref: PDF Unicode definition (HO)
 )
 Package hyperref Info: Option `unicode' set `true' on input line 4073.
 Package hyperref Info: Hyper figures OFF on input line 4192.
@@ -276,15 +276,15 @@ Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 \Fld@menulength=\count289
 \Field@Width=\dimen153
 \Fld@charsize=\dimen154
-Package hyperref Info: Hyper figures OFF on input line 6075.
-Package hyperref Info: Link nesting OFF on input line 6080.
-Package hyperref Info: Hyper index ON on input line 6083.
-Package hyperref Info: backreferencing OFF on input line 6090.
-Package hyperref Info: Link coloring OFF on input line 6095.
-Package hyperref Info: Link coloring with OCG OFF on input line 6100.
-Package hyperref Info: PDF/A mode OFF on input line 6105.
-LaTeX Info: Redefining \ref on input line 6145.
-LaTeX Info: Redefining \pageref on input line 6149.
+Package hyperref Info: Hyper figures OFF on input line 6076.
+Package hyperref Info: Link nesting OFF on input line 6081.
+Package hyperref Info: Hyper index ON on input line 6084.
+Package hyperref Info: backreferencing OFF on input line 6091.
+Package hyperref Info: Link coloring OFF on input line 6096.
+Package hyperref Info: Link coloring with OCG OFF on input line 6101.
+Package hyperref Info: PDF/A mode OFF on input line 6106.
+LaTeX Info: Redefining \ref on input line 6146.
+LaTeX Info: Redefining \pageref on input line 6150.
 (/home/kev/.TinyTeX/texmf-dist/tex/latex/base/atbegshi-ltx.sty
 Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
 package with kernel methods
@@ -295,7 +295,7 @@ package with kernel methods
 )
 Package hyperref Info: Driver (autodetected): hxetex.
 (/home/kev/.TinyTeX/texmf-dist/tex/latex/hyperref/hxetex.def
-File: hxetex.def 2021-02-27 v7.00k Hyperref driver for XeTeX
+File: hxetex.def 2021-06-07 v7.00m Hyperref driver for XeTeX
 (/home/kev/.TinyTeX/texmf-dist/tex/generic/stringenc/stringenc.sty
 Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO
 )
@@ -853,15 +853,16 @@ LaTeX Info: Redefining \nameref on input line 101.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfigure package is loaded.
 Package caption Info: End \AtBeginDocument code.
-File: pictures/logo.jpg Graphic file (type bmp)
-<pictures/logo.jpg>
-
-LaTeX Font Warning: Font shape `TU/phv/b/n' undefined
-(Font)              using `TU/phv/m/n' instead on input line 123.
-
+File: pictures/logo.png Graphic file (type bmp)
+<pictures/logo.png>
 [1
 
-] (./tesis.toc)
+]
+
+LaTeX Font Warning: Font shape `TU/phv/b/n' undefined
+(Font)              using `TU/phv/m/n' instead on input line 137.
+
+(./tesis.toc)
 \tf@toc=\write4
 \openout4 = `tesis.toc'.
 
@@ -907,10 +908,10 @@ File: pictures/Rplot02.pdf Graphic file (type pdf)
 <use pictures/Rplot02.pdf>
 
 LaTeX Font Warning: Font shape `TU/phv/m/it' undefined
-(Font)              using `TU/phv/m/n' instead on input line 404.
+(Font)              using `TU/phv/m/n' instead on input line 395.
 
 [12]
-Underfull \hbox (badness 10000) in paragraph at lines 443--455
+Underfull \hbox (badness 10000) in paragraph at lines 434--446
 [][]
  []
 
@@ -918,12 +919,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 443--455
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [13]
-Underfull \hbox (badness 10000) in paragraph at lines 466--474
+Underfull \hbox (badness 10000) in paragraph at lines 457--465
 [][]
  []
 
 [14]
-Underfull \hbox (badness 10000) in paragraph at lines 501--509
+Underfull \hbox (badness 10000) in paragraph at lines 492--500
 [][]
  []
 
@@ -935,12 +936,12 @@ Package rerunfilecheck Info: File `tesis.out' has not changed.
 (rerunfilecheck)             Checksum: 9964F93E8330973C6976F03E8DB46254;860.
  ) 
 Here is how much of TeX's memory you used:
- 19023 strings out of 478489
- 337766 string characters out of 5859743
- 815438 words of memory out of 5000000
- 39026 multiletter control sequences out of 15000+600000
- 406915 words of font info for 54 fonts, out of 8000000 for 9000
+ 19023 strings out of 478468
+ 337787 string characters out of 5859058
+ 816959 words of memory out of 5000000
+ 39047 multiletter control sequences out of 15000+600000
+ 406931 words of font info for 56 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 87i,10n,120p,460b,361s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 87i,10n,120p,460b,379s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 Output written on tesis.pdf (21 pages).
