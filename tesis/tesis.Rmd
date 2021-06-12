@@ -56,12 +56,16 @@ knitr::opts_chunk$set(echo = TRUE)
 <!-- \begin{titlepage} -->
 <!-- \begin{center} -->
 <!-- \begin{huge} -->
-<!-- Facultad de Ciencias Económicas -->
+<!-- Facultad de Ciencias Económicas \\ -->
 <!-- \end{huge} -->
 <!-- \medskip -->
 <!-- \begin{LARGE} -->
-<!-- Universidad Nacional De Córdoba -->
+<!-- Universidad Nacional De Córdoba \\ -->
 <!-- \end{LARGE} -->
+<!-- \medskip -->
+<!-- \begin{large} -->
+<!-- Licenciatura en Economía -->
+<!-- \end{large} -->
 <!-- \end{center} -->
 <!-- \medskip -->
 <!-- \vspace*{0in} -->
@@ -72,7 +76,7 @@ knitr::opts_chunk$set(echo = TRUE)
 <!-- \end{figure} -->
 <!-- \begin{center} -->
 <!-- \begin{Large} -->
-<!-- titulo de tesis. -->
+<!-- Titulo  -->
 <!-- \end{Large} -->
 <!-- \end{center} -->
 <!-- \vspace*{0.1in} -->
@@ -81,6 +85,11 @@ knitr::opts_chunk$set(echo = TRUE)
 <!-- Mansilla, Kevin Gaston \\ -->
 <!-- \end{large} -->
 <!-- Director: .... -->
+<!-- \end{center} -->
+<!-- \vspace*{1in} -->
+<!-- \begin{center} -->
+<!-- Trabajo Final de la Carrera \\ -->
+<!-- Fecha -->
 <!-- \end{center} -->
 <!-- \end{titlepage} -->
 

@@ -1,6 +1,6 @@
 ### Directorio de trabajo
 
-setwd("~/Documents/tesis/modelo_tesis/")
+#setwd("~/Documents/tesis/modelo_tesis/")
 
 ######## Plot  ########
 

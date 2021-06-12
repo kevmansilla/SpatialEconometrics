@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.6.9)  12 JUN 2021 16:41
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.6.9)  12 JUN 2021 18:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -853,14 +853,9 @@ LaTeX Info: Redefining \nameref on input line 101.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfigure package is loaded.
 Package caption Info: End \AtBeginDocument code.
-File: pictures/logo.png Graphic file (type bmp)
-<pictures/logo.png>
-[1
-
-]
 
 LaTeX Font Warning: Font shape `TU/phv/b/n' undefined
-(Font)              using `TU/phv/m/n' instead on input line 137.
+(Font)              using `TU/phv/m/n' instead on input line 105.
 
 (./tesis.toc)
 \tf@toc=\write4
@@ -899,7 +894,9 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 \tf@lof=\write5
 \openout5 = `tesis.lof'.
 
-(./tesis.lot [1])
+(./tesis.lot [1
+
+])
 \tf@lot=\write6
 \openout6 = `tesis.lot'.
 
@@ -908,10 +905,10 @@ File: pictures/Rplot02.pdf Graphic file (type pdf)
 <use pictures/Rplot02.pdf>
 
 LaTeX Font Warning: Font shape `TU/phv/m/it' undefined
-(Font)              using `TU/phv/m/n' instead on input line 395.
+(Font)              using `TU/phv/m/n' instead on input line 363.
 
 [12]
-Underfull \hbox (badness 10000) in paragraph at lines 434--446
+Underfull \hbox (badness 10000) in paragraph at lines 402--414
 [][]
  []
 
@@ -919,12 +916,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 434--446
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [13]
-Underfull \hbox (badness 10000) in paragraph at lines 457--465
+Underfull \hbox (badness 10000) in paragraph at lines 425--433
 [][]
  []
 
 [14]
-Underfull \hbox (badness 10000) in paragraph at lines 492--500
+Underfull \hbox (badness 10000) in paragraph at lines 460--468
 [][]
  []
 
@@ -933,15 +930,15 @@ Underfull \hbox (badness 10000) in paragraph at lines 492--500
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 Package rerunfilecheck Info: File `tesis.out' has not changed.
-(rerunfilecheck)             Checksum: 9964F93E8330973C6976F03E8DB46254;860.
+(rerunfilecheck)             Checksum: 1959EF72B2A5E3DF52DD88C76B9E0ABE;859.
  ) 
 Here is how much of TeX's memory you used:
- 19023 strings out of 478468
- 337787 string characters out of 5859058
- 816959 words of memory out of 5000000
- 39047 multiletter control sequences out of 15000+600000
- 406931 words of font info for 56 fonts, out of 8000000 for 9000
+ 18991 strings out of 478468
+ 337204 string characters out of 5859058
+ 816949 words of memory out of 5000000
+ 39023 multiletter control sequences out of 15000+600000
+ 406907 words of font info for 53 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  87i,10n,120p,460b,379s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on tesis.pdf (21 pages).
+Output written on tesis.pdf (20 pages).
