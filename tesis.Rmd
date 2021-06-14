@@ -103,6 +103,17 @@ knitr::opts_chunk$set(echo = TRUE)
 \newpage
 \setcounter{page}{1}
 \pagestyle{plain}
+```{r paquetes, include=FALSE}
+######### Packages  #########
+packages <- c("readxl", "tseries","dynlm","mFilter","quantmod","forecast",
+              "lmtest","ggplot2","ggfortify","vars","lmtest","dplyr",
+              "leaflet","Rcpp","geosphere","ggmap","tidyverse",
+              "spData","rgeos", "ggmap", "rgdal","maptools", "tidyr","sf",
+              "raster", "maps", "sp","spdep","splm","spData","spatialreg",
+              "stargazer", "ggmap", "plm")
+sapply(packages, require, character.only = TRUE) 
+```
+
 # Introducción
 
 \newpage
@@ -209,11 +220,82 @@ donde $u_{it} \stackrel{iid}{\sim} N(0, \sigma^{2})$. La interacción espacial a
 
 \newpage
 # Datos
+```{r plot_uni, include=FALSE}
+universidades <- c("Universidad Nacional de Córdoba",
+                   "Universidad de Buenos Aires",
+                   "Universidad Nacional del Litoral - Rectorado",
+                   "Universidad Nacional de La Plata",
+                   "Universidad Nacional de Tucumán ",
+                   "Universidad Nacional de Cuyo",
+                   "Universidad Tecnológica Nacional Facultad Regional Córdoba",
+                   "Rectorado - Universidad Nacional del Nordeste",
+                   "Universidad Nacional del Sur palihue",
+                   "Universidad Nacional de Rosario",
+                   "Universidad Nacional de La Rioja",
+                   "Universidad Nacional de Río Cuarto",
+                   "Servicio Social - UNComa - Sede Central",
+                   "Universidad Nacional de Catamarca",
+                   "Universidad Nacional de Lomas de Zamora",
+                   "Universidad Nacional de Luján",
+                   "Universidad Nacional de Salta",
+                   "Rectorado Universidad Nacional de Entre Ríos",
+                   "Rectorado Universidad Nacional de Jujuy",
+                   "Universidad Nacional de Misiones",
+                   "Rectorado de la Universidad Nacional de San Juan",
+                   "Universidad Nacional de San Luis",
+                   "Universidad Nacional de Santiago del Estero",
+                   "UNLPam - Facultad de Ciencias Exactas y Naturales",
+                   "Universidad Nacional de la Patagonia San Juan Bosco - Sede Comodoro Rivadavia",
+                   "Universidad Nacional del Centro de la Provincia de Buenos Aires",
+                   "Universidad Nacional de Mar del Plata",
+                   "Universidad Nacional de Formosa",
+                   "Universidad Nacional de La Matanza",
+                   "Universidad Nacional de Quilmes",
+                   "Universidad Nacional de San Martín - Campus Miguelete",
+                   "Universidad Nacional de General Sarmiento (UNGS)",
+                   "Universidad Nacional de la Patagonia Austral UNPA - Rectorado",
+                   "Universidad Nacional de Lanús",
+                   "Universidad Nacional de Tres de Febrero",
+                   "Universidad Nacional de Villa María - Rectorado",
+                   "UNNOBA - UNIVERSIDAD NACIONAL DEL NOROESTE DE LA PCIA DE BUENOS AIRES",
+                   "Universidad Nacional de Chilecito (UNdeC)",
+                   "Universidad Nacional del Chaco Austral",
+                   "Universidad Nacional de Río Negro",
+                   "Universidad Nacional Arturo Jauretche",
+                   "Universidad nacional De Avellaneda",
+                   "Universidad Nacional de José C. Paz",
+                   "Universidad Nacional de Moreno",
+                   "Universidad Nacional de Villa Mercedes",
+                   "Universidad Nacional del Oeste",
+                   "Universidad Nacional de Tierra del Fuego, Antártida e Islas del Atlántico Sur",
+                   "UNDEF - Universidad de la Defensa Nacional",
+                   "Universidad Nacional de Hurlingham",
+                   "UNC - Facultad de Artes - Pabellón México",
+                   "Universidad Nacional de los Comechingones",
+                   "Universidad Nacional de Rafaela",
+                   "Universidad Nacional de San Antonio de Areco",
+                   "Universidad Nacional del Alto Uruguay",
+                   "Universidad nacional Raúl Scalabrini Ortiz",
+                   "Universidad Nacional Guillermo Brown - UNaB",
+                   "Universidad Tecnológica Nacional Facultad Regional Santa Fe")
+register_google (key = "AIzaSyAq6y5sBAYBjWDwJTa22RUXBrdw0GYWyDk")
+
+universidades <- data.frame(universidades, geocode(universidades))
+argentina_dept <- readRDS("gadm36_ARG_2_sf")
+
+pdf(file="pictures/Rplot02.pdf")
+ggplot(data = argentina_dept) +
+  geom_sf(fill = "white", color = "black") +
+  xlab("Longitud") + ylab("Latitud")  +
+  geom_point(aes(lon, lat), 
+  alpha=0.8, color="blue", size=2, shape=16, data=universidades) 
+dev.off()           # Cierre del archivo
+```
 
 \begin{figure}[h!]
 \caption{\textbf{Distribución geografica de las universidades.}}
 \center
-\includegraphics[width=0.4\textwidth]{pictures/Rplot02.pdf}
+\includegraphics[width=0.5\textwidth]{pictures/Rplot02.pdf}
 \begin{center}
 \begin{scriptsize}
 \textit{Fuente: Elaboraci\'on propia.}
@@ -236,6 +318,44 @@ $$PBG_{it} = b_{0} + b_{1}\,\,POB_{it} + b_{2}\,\, \#universidades_{it} + \epsil
 $$\epsilon_{it} = \alpha_{i} + \lambda \sum_{i \neq j} w_{ij}\epsilon_{jt} + v_{it}$$
 Para seleccionar la especificación más adecuada, partimos del modelo sin autocorrección espacial, e implementamos la prueba de Hausman y las pruebas del multiplicador de Lagrange a los residuos del los modelos. En la tabla \ref{tab:model_ini}, muestra los resultados de la estimación donde en la columna (1) se observa un modelo de datos agrupados (pooled), mientras que las columnas (2) y (3) tienen en cuenta los datos no observados heterogeneidad individual, respectivamente, a través de efectos fijos y efectos aleatorios.  (escribir alguna explicación breve sobre las estimaciones).
 
+```{r base_m_contactos, include=FALSE, warning=FALSE}
+######## Modelo ########
+panel <- read_excel("Base.xlsx")
+#View(panel)
+
+##Matriz de contactos
+arg <- raster::getData("GADM", country = "Argentina", level = 1)
+summary(arg)
+
+arg_nb <- poly2nb(arg, queen=TRUE)
+coords <- coordinates(arg)
+#plot(arg,border="grey",lwd=1.5)
+#plot(arg_nb, coordinates(arg), add=TRUE, col="darkred")
+
+#no funciona xq tierra del fuego queda sin vecionos 
+#dlist <- nbdists(nbarg, coords)
+#idw <- lapply(dlist, function(x) 1/(x/1000))
+#nb2listw(nbarg,glist=idw,style="B",zero.policy = TRUE) #nofunciona
+
+##los k=4 vecinos mas cercanos
+arg_k <- knn2nb((knearneigh(coords,k=4)))
+arg_k
+warg <- nb2listw(arg_k)#funciona
+#plot(arg_k, coordinates(arg), add=TRUE, col="darkred")
+summary(arg_k)
+
+eq <- log(Pbg) ~ log(Pob) + num_uni
+```
+
+```{r modelos_iniciales, include=FALSE, echo=FALSE, warning=FALSE}
+verdoon_pooled <- plm(eq, data=panel, model="pooling")
+
+verdoorn_fe1  <- plm(eq, data = panel, model = "within", effect="individual")
+
+verdoorn_re1  <- plm(eq, data = panel, model = "random", effect="individual")
+```
+
+
 \begin{table}[h!]
 \caption{Estimación sin considerar autocorrelación espacial}
 \label{tab:model_ini}
@@ -254,6 +374,14 @@ $R^{2}$ ajustado   & 0.47102     & 0.72179                  & 0.332             
 \end{table}
 
 Por otro lado la prueba estándar de Hausman y su versión robusta para la detección de autocorrelación espacial de errores que se presenta en la tabla \ref{tab:hausman}, conduce al rechazo de la hipótesis nula sobre la ausencia de correlación entre efectos y variables explicativas.  Por lo que se elige un modelo de efectos fijo.
+
+```{r test_hausman, include=FALSE, echo=FALSE, warning=FALSE}
+hausman_panel <- phtest(eq, data = panel)
+
+spat_hausman_ML_SEM <- sphtest(eq, data=panel, listw=warg, spatial.model = "error", method="ML")
+
+spat_hausman_ML_SAR<-sphtest(eq, data=panel, listw =warg, spatial.model = "lag", method="ML")
+```
 
 \begin{table}[h!]
 \caption{Prueba de Hausman}
@@ -274,6 +402,23 @@ Los estadisticos de la prueba para tomar la autocorrelación espacial por SAR (P
 
 La versión robusta de $LM_{ERROR}$ no es significativa (Prueba 4) mientras que $LM_{LAG}$ si lo es (Prueba 3). Por lo tanto, es conveniente estimar un modelo Fixed-effect SAR. (poner en pie de página tal vez: En algunos casos, estas dos últimaspruebas robustas no permiten discriminar entre un SAR y un SEM. Son posibles varias posibilidades. El primero consiste en estimar un modelo que contiene ambos términosespaciales (SARAR). ))
 
+```{r tests_estruc, include=FALSE, echo=FALSE, warning=FALSE}
+# Fixed effects model
+# Test 1
+slmtest(eq, data=panel, listw = warg, test="lml", model="within")
+
+# Test 2
+slmtest(eq, data=panel, listw = warg, test="lme", model="within")
+
+# Test 3
+slmtest(eq, data=panel, listw = warg, test="rlml", model="within")
+
+# Test 4
+slmtest(eq, data=panel, listw = warg, test="rlme", model="within")
+```
+
+
+
 \begin{table}[h!]
 \caption{test LM y LM*}
 \label{tab:lm}
@@ -291,6 +436,20 @@ Entonces, teniendo en cuenta las concluciones de los test que ayudan a mejorar l
 
 En cuanto a los coeficientes estimados, llegamos a la conclución de que tanto log(POB) y $\#universidades$ son significativos, por lo que el aumento de la población tiene un impacto positivo en el pbg, al igual que la creación de nuevas universidades, pero en menor medida. 
 
+```{r modelos, include=FALSE, echo=FALSE, warning=FALSE}
+
+##modelo
+# Likelihood Maximum estimation
+verdoorn_SAR_pool <- spml(eq, data = panel, listw = warg, lag=TRUE ,model="pooling")
+summary(verdoorn_SAR_pool)
+
+# Fixed-effect SAR
+verdoorn_SAR_FE1 <- spml(eq, data = panel, listw = warg, lag=TRUE, model="within", effect="individual", spatial.error="b")
+summary(verdoorn_SAR_FE1)
+
+verdoorn_SAR_FE2 <- spml(eq, data = panel, listw = warg, lag=TRUE, model="within", effect="individual", spatial.error="kkp")
+summary(verdoorn_SAR_FE1)
+```
 
 \begin{table}[h!]
 \caption{Modelo}
