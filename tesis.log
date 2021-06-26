@@ -1,11 +1,11 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.6.9)  13 JUN 2021 22:01
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.6.26)  26 JUN 2021 17:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **tesis.tex
 (./tesis.tex
-LaTeX2e <2021-06-01>
-L3 programming layer <2021-06-01> (/home/kev/.TinyTeX/texmf-dist/tex/latex/base
+LaTeX2e <2021-06-01> patch level 1
+L3 programming layer <2021-06-18> (/home/kev/.TinyTeX/texmf-dist/tex/latex/base
 /article.cls
 Document Class: article 2021/02/12 v1.4n Standard LaTeX document class
 (/home/kev/.TinyTeX/texmf-dist/tex/latex/base/size12.clo
@@ -127,7 +127,7 @@ Package: iftex 2020/03/06 v1.0d TeX engine tests
 Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
 ) (/home/kev/.TinyTeX/texmf-dist/tex/latex/unicode-math/unicode-math.sty (/home
 /kev/.TinyTeX/texmf-dist/tex/latex/l3kernel/expl3.sty
-Package: expl3 2021-06-01 L3 programming layer (loader) 
+Package: expl3 2021-06-18 L3 programming layer (loader) 
 (/home/kev/.TinyTeX/texmf-dist/tex/latex/l3backend/l3backend-xetex.def
 File: l3backend-xetex.def 2021-05-07 L3 backend support: XeTeX
 (|extractbb --version)
@@ -145,9 +145,9 @@ Package: unicode-math 2020/01/31 v0.8q Unicode maths in XeLaTeX and LuaLaTeX
 Package: unicode-math-xetex 2020/01/31 v0.8q Unicode maths in XeLaTeX and LuaLa
 TeX
 (/home/kev/.TinyTeX/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
-Package: xparse 2021-06-01 L3 Experimental document command parser
+Package: xparse 2021-06-18 L3 Experimental document command parser
 ) (/home/kev/.TinyTeX/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty
-Package: l3keys2e 2021-06-01 LaTeX2e option processing using LaTeX3 keys
+Package: l3keys2e 2021-06-18 LaTeX2e option processing using LaTeX3 keys
 ) (/home/kev/.TinyTeX/texmf-dist/tex/latex/fontspec/fontspec.sty
 Package: fontspec 2020/02/21 v2.7i Font selection for XeLaTeX and LuaLaTeX
 (/home/kev/.TinyTeX/texmf-dist/tex/latex/fontspec/fontspec-xetex.sty
@@ -900,45 +900,45 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 \tf@lot=\write6
 \openout6 = `tesis.lot'.
 
-[2] [1] [2] [3] [4] [5] [6] [7] [8] [9] [10] [11]
+[2] [1] [2] [3] [4] [5] [6] [7] [8] [9] [10] [11] [12]
+
+LaTeX Font Warning: Font shape `TU/phv/m/it' undefined
+(Font)              using `TU/phv/m/n' instead on input line 397.
+
 File: pictures/Rplot02.pdf Graphic file (type pdf)
 <use pictures/Rplot02.pdf>
 
-LaTeX Font Warning: Font shape `TU/phv/m/it' undefined
-(Font)              using `TU/phv/m/n' instead on input line 363.
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[12]
-Underfull \hbox (badness 10000) in paragraph at lines 402--414
+[13] [14]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[15] [16]
+Underfull \hbox (badness 10000) in paragraph at lines 515--524
 [][]
  []
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[13]
-Underfull \hbox (badness 10000) in paragraph at lines 425--433
-[][]
- []
-
-[14]
-Underfull \hbox (badness 10000) in paragraph at lines 460--468
-[][]
- []
-
-[15] [16] [17] [18] (./tesis.aux)
+[17] [18] [19] (./tesis.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 Package rerunfilecheck Info: File `tesis.out' has not changed.
-(rerunfilecheck)             Checksum: 1959EF72B2A5E3DF52DD88C76B9E0ABE;859.
+(rerunfilecheck)             Checksum: 9964F93E8330973C6976F03E8DB46254;860.
  ) 
 Here is how much of TeX's memory you used:
- 18991 strings out of 478468
- 337204 string characters out of 5859058
- 816949 words of memory out of 5000000
- 39023 multiletter control sequences out of 15000+600000
+ 18995 strings out of 478451
+ 337287 string characters out of 5858783
+ 817462 words of memory out of 5000000
+ 39044 multiletter control sequences out of 15000+600000
  406907 words of font info for 53 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  87i,10n,120p,460b,379s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on tesis.pdf (20 pages).
+Output written on tesis.pdf (21 pages).

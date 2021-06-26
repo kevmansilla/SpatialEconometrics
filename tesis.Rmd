@@ -1,55 +1,54 @@
 ---
-output: 
-    pdf_document:
-      latex_engine: xelatex
-      toc: no
-      number_sections: true
+output:
+  pdf_document:
+    latex_engine: xelatex
+    toc: no
+    number_sections: yes
+  word_document:
+    toc: no
 csl: apa.csl
 bibliography: references.bib
 header-includes:
-   - \usepackage{times} 
-   - \usepackage{amsmath}
-   - \usepackage{amsfonts}
-   - \usepackage{amssymb}
-   - \usepackage{graphicx}
-   - \usepackage{cancel}
-   - \usepackage{natbib}
-   - \usepackage{float}
-   - \usepackage{multirow}
-   - \usepackage{framed}
-   - \usepackage{amsthm}
-   - \usepackage{enumerate}
-   - \usepackage{textgreek}
-   - \usepackage{caption}
-   - \usepackage{multirow}
-   - \usepackage{epstopdf}
-   - \usepackage{capt-of}
-   - \usepackage{booktabs}
-   - \usepackage{subfigure}
-   - \usepackage{array}
-   - \usepackage{lscape}
-   - \usepackage{dcolumn}
-   - \usepackage{titling}
-   - \renewcommand{\rmdefault}{phv} 
-   - \renewcommand{\sfdefault}{phv}
-   - \renewcommand{\baselinestretch}{2}
-   - \renewcommand{\contentsname}{\'Indice}
-   - \renewcommand{\listfigurename}{\'Indice de Figuras}
-   - \renewcommand{\listtablename}{\'Indice de Tablas}
-   - \renewcommand{\figurename}{Figura}
-   - \renewcommand{\tablename}{Tabla}
- 
-
-fig_caption: true
-geometry: top=3cm, bottom=3cm, left=3cm, right=3cm 
+- \usepackage{times}
+- \usepackage{amsmath}
+- \usepackage{amsfonts}
+- \usepackage{amssymb}
+- \usepackage{graphicx}
+- \usepackage{cancel}
+- \usepackage{natbib}
+- \usepackage{float}
+- \usepackage{multirow}
+- \usepackage{framed}
+- \usepackage{amsthm}
+- \usepackage{enumerate}
+- \usepackage{textgreek}
+- \usepackage{caption}
+- \usepackage{multirow}
+- \usepackage{epstopdf}
+- \usepackage{capt-of}
+- \usepackage{booktabs}
+- \usepackage{subfigure}
+- \usepackage{array}
+- \usepackage{lscape}
+- \usepackage{dcolumn}
+- \usepackage{titling}
+- \renewcommand{\rmdefault}{phv}
+- \renewcommand{\sfdefault}{phv}
+- \renewcommand{\baselinestretch}{2}
+- \renewcommand{\contentsname}{\'Indice}
+- \renewcommand{\listfigurename}{\'Indice de Figuras}
+- \renewcommand{\listtablename}{\'Indice de Tablas}
+- \renewcommand{\figurename}{Figura}
+- \renewcommand{\tablename}{Tabla}
+fig_caption: yes
+geometry: top=3cm, bottom=3cm, left=3cm, right=3cm
 fontsize: 12pt
 urlcolor: blue
 linkcolor: black
 citecolor: black
-
 ---
 
-```{r setup, include=FALSE}
+```{r setup, include=FALSE, warning=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 <!-- \pagestyle{empty} -->
@@ -76,20 +75,20 @@ knitr::opts_chunk$set(echo = TRUE)
 <!-- \end{figure} -->
 <!-- \begin{center} -->
 <!-- \begin{Large} -->
-<!-- Titulo  -->
+<!-- Tit -->
 <!-- \end{Large} -->
 <!-- \end{center} -->
 <!-- \vspace*{0.1in} -->
 <!-- \begin{center} -->
 <!-- \begin{large} -->
-<!-- Mansilla, Kevin Gaston \\ -->
+<!-- Kevin Gaston Mansilla\\ -->
 <!-- \end{large} -->
-<!-- Director: .... -->
+<!-- Director: Dr. Facundo Quiraga Martínez -->
 <!-- \end{center} -->
 <!-- \vspace*{1in} -->
 <!-- \begin{center} -->
 <!-- Trabajo Final de la Carrera \\ -->
-<!-- Fecha -->
+<!-- Acá va la fecha -->
 <!-- \end{center} -->
 <!-- \end{titlepage} -->
 
@@ -101,19 +100,20 @@ knitr::opts_chunk$set(echo = TRUE)
 \listoftables
 
 \newpage
-\setcounter{page}{1}
-\pagestyle{plain}
+
+
 ```{r paquetes, include=FALSE}
 ######### Packages  #########
-packages <- c("readxl", "tseries","dynlm","mFilter","quantmod","forecast",
-              "lmtest","ggplot2","ggfortify","vars","lmtest","dplyr",
-              "leaflet","Rcpp","geosphere","ggmap","tidyverse",
-              "spData","rgeos", "ggmap", "rgdal","maptools", "tidyr","sf",
-              "raster", "maps", "sp","spdep","splm","spData","spatialreg",
-              "stargazer", "ggmap", "plm")
+packages <- c("readxl"   , "tseries", "dynlm"    , "mFilter", "quantmod"  , "forecast",
+              "lmtest"   , "ggplot2", "ggfortify", "vars"   , "lmtest"    , "dplyr"   ,
+              "leaflet"  , "Rcpp"   , "geosphere", "ggmap"  , "tidyverse" , "tidyr"   ,
+              "spData"   , "rgeos"  , "ggmap"    , "rgdal"  , "maptools"  , "sf"      ,
+              "raster"   , "maps"   , "sp"       , "spdep"  , "splm"      , "spData"  ,
+              "stargazer", "ggmap"  , "plm"      , "knitr"  , "spatialreg")
 sapply(packages, require, character.only = TRUE) 
 ```
-
+\setcounter{page}{1}
+\pagestyle{plain}
 # Introducción
 
 \newpage
@@ -220,6 +220,39 @@ donde $u_{it} \stackrel{iid}{\sim} N(0, \sigma^{2})$. La interacción espacial a
 
 \newpage
 # Datos
+
+El estudio se realizó con datos de panel que comprenden un período desde 1993 al 2018 inclusive, correspondientes a las provincias argentinas y la Ciudad de Buenos Aires. Para poder analizar la influencia que tienen el tamaño de la población y el número de universidades en el producto bruto geográfico (PBG). 
+
+Contamos con un total de 624 observaciones de cada variable. En la tabla \ref{table:descriptive} se puede observar un resumen de las mismas. Podemos ver que el mínimo registrado para la población medida en miles de persones, es de 76.07 correspondiente a la provincia de Tierra del Fuego en el año 1993, por otra parte el máximo se corresponde la provincia de Buenos Aires para el año 2018 y el promedio de personas para el territorio es 1627.63.
+
+Por otra parte, el PBG muestra una disparidad bastante notable dado que el presenta un minimo de 1.119 millones de pesos correspondiente a la provincia de Catamarca y un maximo de 2.964.595 para la Bueno Aires.
+
+A su vez, para el número de universidades observamos que el mínimo es una universidad nacional, esto se da para las provincias de Corrientes, Catamarca, Jujuy, La Pampa, Misiones, Salta, San Juan y Tucumán. Y un máximo de nueve en la Ciudad de Buenos Aires. 
+
+\newpage
+\begin{table}[h!]
+\centering
+\caption{\textbf{Estadística Descriptiva}}
+\begin{tabular}{@{}cccc@{}}
+\toprule
+Variables   & PBG       & Población & \#Universidades \\ \midrule
+Minimo      & 1.119     & 76.07     & 1               \\
+1s Quartil  & 3.830     & 424.26    & 1               \\
+Mediana     & 1.2610    & 748.77    & 2               \\
+Media       & 8.0130    & 1627.63   & 2.479           \\
+3rd Quartil & 5.4836    & 1324.40   & 3               \\
+Máximo      & 2.964.595 & 17196.4   & 9               \\ \bottomrule
+\end{tabular}
+\begin{center}
+\begin{scriptsize}
+\textit{Fuente: Elaboraci\'on propia.}
+\end{scriptsize}
+\label{table:descriptive}
+\end{center}
+\end{table}
+
+En la figura \ref{F:uni2}, se esboza la distribución espacial de las universidades nacionales en el territorio. Vemos que la mayor cantidad está ubicada en la provincia de Buenos Aires, esto podemos relacionarlo con la distribución de la población, ya que antes mencionamos que está provincia es la que más población concentra, seguida por la provincia de Córdoba.
+
 ```{r plot_uni, include=FALSE}
 universidades <- c("Universidad Nacional de Córdoba",
                    "Universidad de Buenos Aires",
@@ -281,21 +314,21 @@ universidades <- c("Universidad Nacional de Córdoba",
 register_google (key = "AIzaSyAq6y5sBAYBjWDwJTa22RUXBrdw0GYWyDk")
 
 universidades <- data.frame(universidades, geocode(universidades))
-argentina_dept <- readRDS("gadm36_ARG_2_sf")
+argentina_dept <- readRDS("gadm36_ARG_1_sf")
 
 pdf(file="pictures/Rplot02.pdf")
 ggplot(data = argentina_dept) +
   geom_sf(fill = "white", color = "black") +
   xlab("Longitud") + ylab("Latitud")  +
   geom_point(aes(lon, lat), 
-  alpha=0.8, color="blue", size=2, shape=16, data=universidades) 
+  alpha=0.8, color="red", size=2, shape=16, data=universidades) 
 dev.off()           # Cierre del archivo
 ```
 
 \begin{figure}[h!]
-\caption{\textbf{Distribución geografica de las universidades.}}
+\caption{\textbf{Distribución geográfica de las universidades.}}
 \center
-\includegraphics[width=0.5\textwidth]{pictures/Rplot02.pdf}
+\includegraphics[width=0.8\textwidth]{pictures/Rplot02.pdf}
 \begin{center}
 \begin{scriptsize}
 \textit{Fuente: Elaboraci\'on propia.}
@@ -350,11 +383,11 @@ eq <- log(Pbg) ~ log(Pob) + num_uni
 ```{r modelos_iniciales, include=FALSE, echo=FALSE, warning=FALSE}
 verdoon_pooled <- plm(eq, data=panel, model="pooling")
 
-verdoorn_fe1  <- plm(eq, data = panel, model = "within", effect="individual")
+verdoorn_fe1   <- plm(eq, data = panel, model = "within", effect="individual")
 
-verdoorn_re1  <- plm(eq, data = panel, model = "random", effect="individual")
+verdoorn_re1   <- plm(eq, data = panel, model = "random", effect="individual")
+
 ```
-
 
 \begin{table}[h!]
 \caption{Estimación sin considerar autocorrelación espacial}
@@ -369,6 +402,7 @@ Observaciones      & 624         & 624                      & 624               
 $R^{2}$ ajustado   & 0.47102     & 0.72179                  & 0.332                    \\ \bottomrule
 \end{tabular}
 \begin{scriptsize}
+*** p<0.01, ** p<0.05, * p<0.1.
 \textit{Fuente: Elaboraci\'on propia.}
 \end{scriptsize}
 \end{table}
@@ -392,6 +426,7 @@ Modelo            & Pooled(1) & fixed effects(within) (2) & random effects (GLS)
 Estadistico chi 2 & 1316.3*** & 35.043***                 & 17.048***                \\ \bottomrule
 \end{tabular}
 \begin{scriptsize}
+*** p<0.01, ** p<0.05, * p<0.1.
 \textit{Fuente: Elaboraci\'on propia.}
 \end{scriptsize}
 \end{table}
@@ -417,17 +452,16 @@ slmtest(eq, data=panel, listw = warg, test="rlml", model="within")
 slmtest(eq, data=panel, listw = warg, test="rlme", model="within")
 ```
 
-
-
 \begin{table}[h!]
-\caption{test LM y LM*}
+\caption{Test LM y LM*}
 \label{tab:lm}
 \begin{tabular}{@{}cccc@{}}
 \toprule
 $LM_{LAG}$ (prueba 1) & $LM_{Error}$ (prueba 2) & $LM^{*}_{LAG}$ (prueba 3) & $LM^{*}_{Error}$ (prueba 4) \\ \midrule
-807.74***          & 541.03***            & 267.46***           & 0.74516               \\ \bottomrule
+   807.74***          &    541.03***            &       267.46***           &       0.74516               \\ \bottomrule
 \end{tabular}
 \begin{scriptsize}
+*** p<0.01, ** p<0.05, * p<0.1.
 \textit{Fuente: Elaboraci\'on propia.}
 \end{scriptsize}
 \end{table}
@@ -460,16 +494,16 @@ summary(verdoorn_SAR_FE1)
 Model              & pooled (1)   & fixed effects(MV) (2) \\ \midrule
 $b_{0}$ (intercep) & 6.408201***  & -                     \\
 log(Pob)           & 0.863431***  & 0.0718612*            \\
-\#universidades    & 0.068693 *** & 0.0160614***          \\
+\#universidades    & 0.068693***  & 0.0160614***          \\
 $\lambda$          & -            & 0.9770277***          \\
 Observaciones      & 624          & 624                   \\ \bottomrule
 \end{tabular}
 
 \begin{scriptsize}
+*** p<0.01, ** p<0.05, * p<0.1.
 \textit{Fuente: Elaboraci\'on propia.}
 \end{scriptsize}
 \end{table}
-
 
 \newpage
 # Conclusiones preliminares
