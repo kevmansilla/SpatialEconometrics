@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.6.26)  26 JUN 2021 17:42
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.7.4)  7 JUL 2021 01:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -181,6 +181,91 @@ LaTeX Font Info:    Redeclaring font encoding TS1 on input line 47.
 \l__um_primecount_int=\count284
 \g__um_primekern_muskip=\muskip17
 (/home/kev/.TinyTeX/texmf-dist/tex/latex/unicode-math/unicode-math-table.tex)))
+
+Package fontspec Info: DejaVu Sans scale = 0.7881120068080199.
+
+
+Package fontspec Info: DejaVu Sans scale = 0.7881120068080199.
+
+
+Package fontspec Info: DejaVu Sans/B scale = 0.7881120068080199.
+
+
+Package fontspec Info: DejaVu Sans/I scale = 0.7881120068080199.
+
+
+Package fontspec Info: DejaVu Sans/BI scale = 0.7881120068080199.
+
+
+Package fontspec Info: Font family 'DejaVuSans(0)' created for font 'DejaVu
+(fontspec)             Sans' with options
+(fontspec)             [Scale=MatchLowercase,Ligatures=TeX,Scale=1].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.: <->s*[1]"DejaVu
+(fontspec)             Sans/OT:script=latn;language=dflt;mapping=tex-text;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
+(fontspec)             - 'bold' (b/n) with NFSS spec.: <->s*[1]"DejaVu
+(fontspec)             Sans/B/OT:script=latn;language=dflt;mapping=tex-text;"
+(fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.: 
+(fontspec)             - 'italic' (m/it) with NFSS spec.: <->s*[1]"DejaVu
+(fontspec)             Sans/I/OT:script=latn;language=dflt;mapping=tex-text;"
+(fontspec)             - 'italic small caps'  (m/scit) with NFSS spec.: 
+(fontspec)             - 'bold italic' (b/it) with NFSS spec.: <->s*[1]"DejaVu
+(fontspec)             Sans/BI/OT:script=latn;language=dflt;mapping=tex-text;"
+(fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.: 
+
+LaTeX Font Info:    Font shape `TU/DejaVuSans(0)/m/n' will be
+(Font)              scaled to size 12.0pt on input line 21.
+
+Package fontspec Info: DejaVu Sans scale = 0.9999976748565969.
+
+
+Package fontspec Info: DejaVu Sans scale = 0.9999976748565969.
+
+
+Package fontspec Info: DejaVu Sans/B scale = 0.9999976748565969.
+
+
+Package fontspec Info: DejaVu Sans/I scale = 0.9999976748565969.
+
+
+Package fontspec Info: DejaVu Sans/BI scale = 0.9999976748565969.
+
+
+Package fontspec Info: Font family 'DejaVuSans(1)' created for font 'DejaVu
+(fontspec)             Sans' with options [Scale=MatchLowercase].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <->s*[0.9999976748565969]"DejaVu
+(fontspec)             Sans/OT:script=latn;language=dflt;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
+(fontspec)             - 'bold' (b/n) with NFSS spec.:
+(fontspec)             <->s*[0.9999976748565969]"DejaVu
+(fontspec)             Sans/B/OT:script=latn;language=dflt;"
+(fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.: 
+(fontspec)             - 'italic' (m/it) with NFSS spec.:
+(fontspec)             <->s*[0.9999976748565969]"DejaVu
+(fontspec)             Sans/I/OT:script=latn;language=dflt;"
+(fontspec)             - 'italic small caps'  (m/scit) with NFSS spec.: 
+(fontspec)             - 'bold italic' (b/it) with NFSS spec.:
+(fontspec)             <->s*[0.9999976748565969]"DejaVu
+(fontspec)             Sans/BI/OT:script=latn;language=dflt;"
+(fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.: 
+
+LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
+(Font)                  OT1/lmr/m/n --> TU/DejaVuSans(1)/m/n on input line 21.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/lmr/m/it --> TU/DejaVuSans(1)/m/it on input line 21
+.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/lmr/bx/n --> TU/DejaVuSans(1)/b/n on input line 21.
+
 (/home/kev/.TinyTeX/texmf-dist/tex/latex/xcolor/xcolor.sty
 Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
 (/home/kev/.TinyTeX/texmf-dist/tex/latex/graphics-cfg/color.cfg
@@ -319,7 +404,7 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \Hy@SectionHShift=\skip52
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 46.
+Package hyperref Info: Option `colorlinks' set `true' on input line 47.
 (/home/kev/.TinyTeX/texmf-dist/tex/latex/geometry/geometry.sty
 Package: geometry 2020/01/02 v5.9 Page Geometry
 (/home/kev/.TinyTeX/texmf-dist/tex/generic/iftex/ifvtex.sty
@@ -355,8 +440,6 @@ Package: grffile 2019/11/11 v2.1 Extended file name support for graphics (legac
 y)
 Package grffile Info: This package is an empty stub for compatibility on input 
 line 40.
-) (/home/kev/.TinyTeX/texmf-dist/tex/latex/psnfss/times.sty
-Package: times 2020/03/25 PSNFSS-v9.3 (SPQR) 
 ) (/home/kev/.TinyTeX/texmf-dist/tex/latex/cancel/cancel.sty
 Package: cancel 2013/04/12 v2.2 Cancel math terms
 ) (/home/kev/.TinyTeX/texmf-dist/tex/latex/natbib/natbib.sty
@@ -532,20 +615,14 @@ LaTeX Font Info:    Trying to load font information for LGR+cmr on input line 1
 File: lgrcmr.fd 2017/07/29 v1.2 Greek European Computer Regular
 )
 LaTeX Font Info:    ... okay on input line 101.
-LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/lmr/m/n --> TU/phv/m/n on input line 101.
-LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/lmr/m/it --> TU/phv/m/it on input line 101.
-LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/lmr/bx/n --> TU/phv/b/n on input line 101.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
 (Font)                  OT1/lmss/m/n --> TU/phv/m/n on input line 101.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
 (Font)                  OT1/lmss/bx/n --> TU/phv/b/n on input line 101.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/lmtt/m/n --> TU/pcr/m/n on input line 101.
+(Font)                  OT1/lmtt/m/n --> TU/lmtt/m/n on input line 101.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/lmtt/m/n --> TU/pcr/b/n on input line 101.
+(Font)                  OT1/lmtt/m/n --> TU/lmtt/b/n on input line 101.
 
 Package fontspec Info: latinmodern-math scale = 0.9999970497384594.
 
@@ -824,15 +901,15 @@ LaTeX Info: Redefining \nameref on input line 101.
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: 
-* h-part:(L,W,R)=(85.35826pt, 443.57848pt, 85.35826pt)
-* v-part:(T,H,B)=(85.35826pt, 624.25346pt, 85.35826pt)
+* h-part:(L,W,R)=(71.13188pt, 472.03123pt, 71.13188pt)
+* v-part:(T,H,B)=(71.13188pt, 652.70622pt, 71.13188pt)
 * \paperwidth=614.295pt
 * \paperheight=794.96999pt
-* \textwidth=443.57848pt
-* \textheight=624.25346pt
-* \oddsidemargin=13.08827pt
-* \evensidemargin=13.08827pt
-* \topmargin=-23.91173pt
+* \textwidth=472.03123pt
+* \textheight=652.70622pt
+* \oddsidemargin=-1.1381pt
+* \evensidemargin=-1.1381pt
+* \topmargin=-38.1381pt
 * \headheight=12.0pt
 * \headsep=25.0pt
 * \topskip=12.0pt
@@ -853,9 +930,14 @@ LaTeX Info: Redefining \nameref on input line 101.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfigure package is loaded.
 Package caption Info: End \AtBeginDocument code.
+File: pictures/logo.png Graphic file (type bmp)
+<pictures/logo.png>
+[1
+
+]
 
 LaTeX Font Warning: Font shape `TU/phv/b/n' undefined
-(Font)              using `TU/phv/m/n' instead on input line 105.
+(Font)              using `TU/phv/m/n' instead on input line 146.
 
 (./tesis.toc)
 \tf@toc=\write4
@@ -894,51 +976,87 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 \tf@lof=\write5
 \openout5 = `tesis.lof'.
 
-(./tesis.lot [1
-
-])
+(./tesis.lot [1])
 \tf@lot=\write6
 \openout6 = `tesis.lot'.
 
-[2] [1] [2] [3] [4] [5] [6] [7] [8] [9] [10] [11] [12]
+[2] [1] [2]
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
+(Font)              scaled to size 10.0pt on input line 247.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
+(Font)              scaled to size 7.0pt on input line 247.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
+(Font)              scaled to size 5.0pt on input line 247.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
+(Font)              scaled to size 10.00092pt on input line 247.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
+(Font)              scaled to size 7.00064pt on input line 247.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
+(Font)              scaled to size 5.00046pt on input line 247.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
+(Font)              scaled to size 9.99893pt on input line 247.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
+(Font)              scaled to size 6.99925pt on input line 247.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
+(Font)              scaled to size 4.99947pt on input line 247.
+[3] [4] [5] [6] [7] [8] [9] [10] [11] [12] [13] [14]
 
 LaTeX Font Warning: Font shape `TU/phv/m/it' undefined
-(Font)              using `TU/phv/m/n' instead on input line 397.
+(Font)              using `TU/phv/m/n' instead on input line 573.
 
 File: pictures/Rplot02.pdf Graphic file (type pdf)
 <use pictures/Rplot02.pdf>
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[13] [14]
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
 [15] [16]
-Underfull \hbox (badness 10000) in paragraph at lines 515--524
-[][]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[17] [18]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[19] [20] [21]
+Underfull \hbox (badness 10000) in paragraph at lines 779--783
+[][][][][][][][][] [] [][][] [] [][][][] [] [][] [] [][][] [] [][][][][][][][][
+][] [] [][] [] [][] [] [][][][][] [] [][] [] [][][][][][][][] [] [][][][][][][]
+[] []
+ []
+
+[22]
+Underfull \hbox (badness 1102) in paragraph at lines 837--842
+[][]\TU/phv/m/it/12 Pastor, M., Peraita, C., & Perez, F. (2015). Estimating the
+ long-term economic
  []
 
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
+Underfull \hbox (badness 1584) in paragraph at lines 837--842
+\TU/phv/m/it/12 impacts of spanish universities on the national economy. Resear
+chGate; Springer
+ []
 
-[17] [18] [19] (./tesis.aux)
+
+Underfull \hbox (badness 10000) in paragraph at lines 837--842
+\TU/phv/m/it/12 Verlag. [][]$[][][][][] [] [] [] [][][] [] [][][][][][][][][][]
+[][] [] [][][] [] [][][][][][][][][][][] [] [][][][][][][][][] [] [][][][][][][
+][][][] [] [][][] [] [][][][] [][]
+ []
+
+[23] (./tesis.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 Package rerunfilecheck Info: File `tesis.out' has not changed.
-(rerunfilecheck)             Checksum: 9964F93E8330973C6976F03E8DB46254;860.
+(rerunfilecheck)             Checksum: 8BE63A2B3D5784BC098C2144A83A4B43;860.
  ) 
 Here is how much of TeX's memory you used:
- 18995 strings out of 478451
- 337287 string characters out of 5858783
- 817462 words of memory out of 5000000
- 39044 multiletter control sequences out of 15000+600000
- 406907 words of font info for 53 fonts, out of 8000000 for 9000
+ 19116 strings out of 478451
+ 340781 string characters out of 5858784
+ 817119 words of memory out of 5000000
+ 39123 multiletter control sequences out of 15000+600000
+ 410230 words of font info for 88 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 87i,10n,120p,460b,379s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 87i,10n,122p,460b,377s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on tesis.pdf (21 pages).
+Output written on tesis.pdf (26 pages).

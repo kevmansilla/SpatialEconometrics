@@ -37,14 +37,14 @@ summary(arg_k)
 
 ##regresion lineal de prueba
 names(panel)
-reg_multi <- lm(Pbg ~Pob + num_uni, data = panel)
+reg_multi <- lm(Pbg_p ~Pob + num_uni, data = panel)
 summary(reg_multi)
 
 resid <- reg_multi$residuals[1:24]
 length(resid)
 
 ##Defino ecuacion a estimar
-eq <- log(Pbg) ~ log(Pob) + num_uni
+eq <- log(Pbg_p) ~ log(Pob) + log(num_uni)
 
 ##modelo sin tener en cuenta la autocorrección espacial
 verdoon_pooled <- plm(eq, data=panel, model="pooling")
