@@ -145,7 +145,6 @@ A su vez, @pastor_2015_estimating estudia los efectos de las universidades por e
 
 Como se puede ver hay muchos estudios realizados para ver cómo influye la IES en el ambiente regional. No se encontraron estudios específicamente para Argentina sobre lo que se quiere demostrar en este trabajo. El más significativo y que va en línea es el de @valero2019economic que a partir de un conjunto de datos con la ubicación de casi 15.000 universidades en aproximadamente 1.500 regionales en 78 países, alguna de las cuales de remontan al siglo XI, estiman un modelo de efecto fijo al nivel subnacional entre 1950 y 2010 y encuentran que los aumentos en el número de universidades están asociados positivamente con el crecimiento futuro del PIB per cápita. 
 
-\newpage
 # Metodología 
 
 La autocorrelación espacial puede definirse como la similitud de valores en localizaciones próximas, ya sea positiva o negativa, su existencia implica que una muestra de datos contiene menor información que una muestra no correlacionada, formalmente: 
@@ -336,18 +335,19 @@ universidades <- c("Universidad Nacional de Córdoba",
                    "Universidad nacional Raúl Scalabrini Ortiz",
                    "Universidad Nacional Guillermo Brown - UNaB",
                    "Universidad Tecnológica Nacional Facultad Regional Santa Fe")
+
 register_google (key = "AIzaSyAq6y5sBAYBjWDwJTa22RUXBrdw0GYWyDk")
 
 universidades <- data.frame(universidades, geocode(universidades))
 argentina_dept <- readRDS("gadm36_ARG_1_sf")
 
-pdf(file="pictures/Rplot02.pdf")
+pdf(file="pictures/Rplot02.pdf") #open file
 ggplot(data = argentina_dept) +
   geom_sf(fill = "white", color = "black") +
   xlab("Longitud") + ylab("Latitud")  +
   geom_point(aes(lon, lat), 
   alpha=0.8, color="red", size=2, shape=16, data=universidades) 
-dev.off()           # Cierre del archivo
+dev.off()           # closet fiie
 ```
 
 \begin{figure}[h!]
