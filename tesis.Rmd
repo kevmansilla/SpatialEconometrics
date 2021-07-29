@@ -178,7 +178,7 @@ Al establecer un centroide en cada provincia se detectó que en el caso de conti
 
 Una vez definida la matriz de contactos, pueden utilizarse diferentes estadísticos univariantes que permiten detectar autocorrelación espacial. Los mismos pueden clasificarse como medidas de dependencia globales o locales. Las medidas globales utilizan la información completa del conjunto de datos con el fin de obtener un valor promedio para todo el espacio geográfico. Al resumir en un único valor toda la información, no es posible detectar la variabilidad de la dependencia ni la localización de estos patrones. Por su parte, las medidas locales examinan la autocorrelación espacial en un subconjunto de datos. 
 
-A la hora de estudiar los datos espaciales, está puede estar presente en variables explicativas, variable dependiente o en los residuos del modelo. Cuando la dependencia se encuentra en la variable dependiendo los modelos se denominan modelos de retardo espacial mientras que si está en los residuos se denominan modelos de error espacial. Por otro lado, cuando se presenta en las variables explicativas se llaman modelos de regresión cruzada o modelos X espacialmente retardados. Entonces, lo que primero se hace es armar el modelo como si fuera una regresión lineal y ver dónde está la autocorrelación espacial y ver cuál es el modelo que mejor se ajusta.
+A la hora de estudiar los datos espaciales, la correlación puede estar presente en variables explicativas, variable dependiente o en los residuos del modelo. Cuando la dependencia se encuentra en la variable dependiendo los modelos se denominan modelos de retardo espacial mientras que si está en los residuos se denominan modelos de error espacial. Por otro lado, cuando se presenta en las variables explicativas se llaman modelos de regresión cruzada o modelos X espacialmente retardados. Entonces, lo que primero se hace es armar el modelo como si fuera una regresión lineal y ver dónde está la autocorrelación espacial y ver cuál es el modelo que mejor se ajusta.
 
 Es por ello que presentaremos la prueba de @hausman1978specification, que permite decidir entre un modelo en el cual los efectos individuales no se correlacionan con las variables explicativas, este test determina qué método de estimación utilizar.  
 
@@ -454,7 +454,7 @@ spat_hausman_ML_SAR <-sphtest(eq, data=panel, listw =warg, spatial.model = "lag"
 \begin{tabular}{@{}cccc@{}}
 \toprule
 Modelo            & Pooled(1) & fixed effects(within) (2) & random effects (GLS) (3) \\ \midrule
-Estadistico chi 2 & 1131.5*** & 35.739***                 & 10.591***                \\ \bottomrule
+Estadístico chi 2 & 1131.5*** & 35.739***                 & 10.591***                \\ \bottomrule
 \end{tabular}
 
 \begin{scriptsize}
@@ -465,7 +465,7 @@ Estadistico chi 2 & 1131.5*** & 35.739***                 & 10.591***           
 
 En la tabla \ref{tab:lm}, se exponen los resultados de las pruebas de los multiplicador de Lagrange (LM) en un modelo de efectos fijos, los cuales tienden a favorecer una especificación SAR del modelo. 
 
-Los estadisticos de la prueba para tomar la autocorrelación espacial por SAR (Prueba 1) o SEM (Prueba 2) confirman el rechazo de la hipótesis de que estos dos términos (tomados independientemente) son nulos, la lectura simultánea nos permite concluir sobre la especificación más adecuada para tener en cuenta la autocorrelación espacial. Para concluir de una manera más creíble, se utilizan pruebas robustas en la presencia de la especificación alternativa de autocorrelación espacial (Pruebas 3 y 4).
+Los estadísticos de la prueba para tomar la autocorrelación espacial por SAR (Prueba 1) o SEM (Prueba 2) confirman el rechazo de la hipótesis de que estos dos términos (tomados independientemente) son nulos, la lectura simultánea nos permite concluir sobre la especificación más adecuada para tener en cuenta la autocorrelación espacial. Para concluir de una manera más creíble, se utilizan pruebas robustas en la presencia de la especificación alternativa de autocorrelación espacial (Pruebas 3 y 4).
 
 La versión robusta de $LM_{ERROR}$ no es significativa (Prueba 4) mientras que $LM_{LAG}$ si lo es (Prueba 3). Por lo tanto, es conveniente estimar un modelo Fixed-effect SAR\footnote{En algunos casos, estas dos últimas pruebas robustas no permiten discriminar entre un SAR y un SEM. Son posibles varias posibilidades. El primero consiste en estimar un modelo que contiene ambos términos espaciales (SARAR)}. 
 
