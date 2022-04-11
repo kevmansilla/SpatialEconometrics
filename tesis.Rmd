@@ -34,6 +34,7 @@ header-includes:
   - \usepackage{lscape}
   - \usepackage{dcolumn}
   - \usepackage{titling}
+  - \usepackage{times}
   - \renewcommand{\rmdefault}{phv}  
   - \renewcommand{\sfdefault}{phv}
   - \renewcommand{\baselinestretch}{2}
@@ -77,7 +78,7 @@ Licenciatura en Economía
 \end{figure}
 \begin{center}
 \begin{Large}
-Impacto económico de las universidades en Argentina
+\textbf{Impacto económico de la creación de universidades: evidencia vinculada con la expansión del sistema de educación en Argentina 1993-2015}
 \end{Large}
 \end{center}
 \vspace*{0.1in}
@@ -90,7 +91,7 @@ Director: Dr. Facundo Quiraga Martínez
 \vspace*{1in}
 \begin{center}
 Trabajo Final de la Carrera \\
-Acá va la fecha
+Septiembre de 2021
 \end{center}
 \end{titlepage}
 
@@ -123,7 +124,7 @@ Hoy en día cobra cada vez más importancia determinar el impacto que tienen las
 
 Para el caso de Argentina, @quiroga2018evaluacion plantea que existen tres expansiones del sistema universitario. La primera entre los años 1988 y 1995, la segunda comprende los años 2002 y 2010. Por último, la tercera fue durante los años 2014, 2015 y 2016. Además es importante resaltar que todas las provincias cuentan con la cobertura de al menos una universidad de gestión pública, esto nos permite dimensionar la amplitud del sistema de educación superior argentino. 
 
-Estas instituciones educativas afectan el crecimiento por diferentes canales, entre ellos podemos incluir una mayor oferta de capital humano, más innovación, apoyo de valores democráticos y efectos sobre la demanda.  
+Estas instituciones educativas afectan el crecimiento por diferentes canales, entre ellos podemos destacar una mayor oferta de capital humano, más innovación, apoyo de valores democráticos y efectos sobre la demanda.  
 
 Gracias a la teoría microeconómica podemos afirmar que un mayor acceso a la educación superior genera beneficios marginales privados y sociales. Entre los privados destacan la obtención de mayores ingresos y estabilidad laboral. También las instituciones públicas de educación superior (IES) son el lugar para resolver problemas sociales y alcanzar los objetivos nacionales [@fischman2018access]. 
 
@@ -159,7 +160,7 @@ Por el contrario, se dice que existe autocorrelación espacial negativa cuando l
 
 En los análisis de autocorrelación espacial se necesita una medida de contigüidad que podemos definirla de manera general como una relación de vecindad, estas pueden ser de tres tipos, caso de torre, caso de alfil y caso de la reina. Un aspecto crucial de la definición de la autocorrelación espacial es la determinación de las ubicaciones cercanas, es decir, aquellas ubicaciones que rodean un punto de datos que podría considerarse que influyen en la observación en ese punto de datos. 
 
-Sin embargo, la determinación de este vecindario tiene un cierto grado de arbitrariedad. El número de observaciones en el vecindario establecido para cada ubicación puede expresarse mediante una matriz de ponderaciones $W$, que describe la conectividad entre n unidades que se encuentran localizadas en un espacio bidimensional.
+Sin embargo, la determinación de este vecindario tiene un cierto grado de arbitrariedad. El número de observaciones en el vecindario establecido para cada ubicación puede expresarse mediante una matriz de ponderaciones $W$, que describe la conectividad entre $n$ unidades que se encuentran localizadas en un espacio bidimensional.
 \begin{equation*}
 \begin{bmatrix}
 W_{11} & W_{12} & \ldots & W_{1n}\\
@@ -171,7 +172,7 @@ W_{n1} & W_{n2} & \ldots & W_{nn}
 
 donde $n$ representa el número de ubicaciones. La entrada en la fila $i$ y columna $j$, denotado como $W_{ij}$ corresponde al par $(i,j)$ de ubicaciones. Los elementos diagonales de la matriz son cero, por convenio, mientras que los demás elementos donde $i \neq j$ toman valores distintos de cero cuando las ubicaciones se consideran vecinas. 
 
-Nosotros nos basaremos en la distancia euclídea (tipo reina), este método considera vecinas dos áreas si cumplen cierta propiedad referente a la distancia que las separa. Nos referimos a la distancia entre dos regiones como la distancia entre sus puntos representativos (centroides).  
+Se toma como referencia la distancia euclídea (tipo reina), este método considera vecinas dos áreas si cumplen cierta propiedad referente a la distancia que las separa. Nos referimos a la distancia entre dos regiones como la distancia entre sus puntos representativos (centroides).  
 
 Al establecer un centroide en cada provincia se detectó que en el caso de contigüidad tipo reina la provincia de tierra del fuego quedaba desconectada del resto, esto es porque esté criterio no obliga a los polígonos que se encuentran aislados geográficamente a relacionarse o conectarse con los demás.  Una solución común a este problema es restringir la estructura contigua a los $k-$vecinos más cercanos, en nuestro caso $k=4$, y por lo tanto excluir las 'islas' (áreas que por no estar a una distancia d de otra área se podría decir que no tiene vecinos) y forzar a cada unidad de área a tener el mismo número $k$ de vecinos. Formalmente 
 \begin{displaymath}W_{ij} = \left\{ \begin{array}{ll}1 & \mbox{Si el centroide de $j$ es uno de los $k$ centroides más cercanos al de $i$} \\0 & \mbox{c.c}\end{array}\right.\end{displaymath}
@@ -336,7 +337,7 @@ universidades <- c("Universidad Nacional de Córdoba",
                    "Universidad Nacional Guillermo Brown - UNaB",
                    "Universidad Tecnológica Nacional Facultad Regional Santa Fe")
 
-register_google (key = "AIzaSyAq6y5sBAYBjWDwJTa22RUXBrdw0GYWyDk")
+register_google (key = "AIzaSyB9Jp8zkOvtURRrIOh1SM86rwE5RlBWhFo")
 
 universidades <- data.frame(universidades, geocode(universidades))
 argentina_dept <- readRDS("gadm36_ARG_1_sf")
@@ -373,7 +374,7 @@ Para tener en cuenta los efectos espaciales es necesario estimar la especificaci
 modelo:
 $$PBG_{it} = b_{0} + b_{1}\,\,POB_{it} + b_{2}\,\, \#universidades_{it} + \epsilon_{it}$$
 $$\epsilon_{it} = \alpha_{i} + \lambda \sum_{i \neq j} w_{ij}\epsilon_{jt} + v_{it}$$
-Para seleccionar la especificación más adecuada, partimos del modelo sin autocorrección espacial, e implementamos la prueba de Hausman y las pruebas del multiplicador de Lagrange a los residuos del los modelos. En la tabla \ref{tab:model_ini}, muestra los resultados de la estimación donde en la columna (1) se observa un modelo de datos agrupados (pooled), mientras que las columnas (2) y (3) tienen en cuenta los datos no observados heterogeneidad individual, respectivamente, a través de efectos fijos y efectos aleatorios.  (escribir alguna explicación breve sobre las estimaciones).
+Para seleccionar la especificación más adecuada, partimos del modelo sin autocorrección espacial, e implementamos la prueba de Hausman y las pruebas del multiplicador de Lagrange a los residuos del los modelos. En la tabla \ref{tab:model_ini}, muestra los resultados de la estimación donde en la columna (1) se observa un modelo de datos agrupados (pooled), mientras que las columnas (2) y (3) tienen en cuenta los datos no observados heterogeneidad individual, respectivamente, a través de efectos fijos y efectos aleatorios.  Se puede observer que en todos los casos las variables son significativas.
 
 ```{r base_m_contactos, include=FALSE, warning=FALSE}
 ######## Modelo ########
@@ -386,8 +387,8 @@ summary(arg)
 
 arg_nb <- poly2nb(arg, queen=TRUE)
 coords <- coordinates(arg)
-#plot(arg,border="grey",lwd=1.5)
-#plot(arg_nb, coordinates(arg), add=TRUE, col="darkred")
+plot(arg,border="grey",lwd=1.5)
+plot(arg_nb, coordinates(arg), add=TRUE, col="darkred")
 
 #no funciona xq tierra del fuego queda sin vecionos 
 #dlist <- nbdists(nbarg, coords)
@@ -398,7 +399,7 @@ coords <- coordinates(arg)
 arg_k <- knn2nb((knearneigh(coords,k=4)))
 arg_k
 warg <- nb2listw(arg_k)#funciona
-#plot(arg_k, coordinates(arg), add=TRUE, col="darkred")
+plot(arg_k, coordinates(arg), add=TRUE, col="darkred")
 summary(arg_k)
 
 eq <- log(Pbg_p) ~ log(Pob) + log(num_uni)
