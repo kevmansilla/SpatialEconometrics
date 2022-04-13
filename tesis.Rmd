@@ -78,7 +78,7 @@ Licenciatura en Economía
 \end{figure}
 \begin{center}
 \begin{Large}
-\textbf{Impacto económico de la creación de universidades: evidencia vinculada con la expansión del sistema de educación en Argentina 1993-2015}
+\textbf{Impacto económico de la creación de universidades: evidencia vinculada con la expansión del sistema de educación en Argentina 1993-2018}
 \end{Large}
 \end{center}
 \vspace*{0.1in}
@@ -277,79 +277,6 @@ Máximo      & 2.964.595 & 17196.4   & 9               \\ \bottomrule
 \end{table}
 
 En la figura \ref{F:uni2}, se esboza la distribución espacial de las universidades nacionales en el territorio. Vemos que la mayor cantidad está ubicada en la provincia de Buenos Aires, esto es debido a que la política de expansión del sistema universitario no tuvo una clara estrategia de cobertura territorial y concentró la mayor parte de oferta en el área metropolitana de la Ciudad de Buenos Aires [@quiroga2018evaluacion].
-
-```{r plot_uni, include=FALSE}
-universidades <- c("Universidad Nacional de Córdoba",
-                   "Universidad de Buenos Aires",
-                   "Universidad Nacional del Litoral - Rectorado",
-                   "Universidad Nacional de La Plata",
-                   "Universidad Nacional de Tucumán ",
-                   "Universidad Nacional de Cuyo",
-                   "Universidad Tecnológica Nacional Facultad Regional Córdoba",
-                   "Rectorado - Universidad Nacional del Nordeste",
-                   "Universidad Nacional del Sur palihue",
-                   "Universidad Nacional de Rosario",
-                   "Universidad Nacional de La Rioja",
-                   "Universidad Nacional de Río Cuarto",
-                   "Servicio Social - UNComa - Sede Central",
-                   "Universidad Nacional de Catamarca",
-                   "Universidad Nacional de Lomas de Zamora",
-                   "Universidad Nacional de Luján",
-                   "Universidad Nacional de Salta",
-                   "Rectorado Universidad Nacional de Entre Ríos",
-                   "Rectorado Universidad Nacional de Jujuy",
-                   "Universidad Nacional de Misiones",
-                   "Rectorado de la Universidad Nacional de San Juan",
-                   "Universidad Nacional de San Luis",
-                   "Universidad Nacional de Santiago del Estero",
-                   "UNLPam - Facultad de Ciencias Exactas y Naturales",
-                   "Universidad Nacional de la Patagonia San Juan Bosco - Sede Comodoro Rivadavia",
-                   "Universidad Nacional del Centro de la Provincia de Buenos Aires",
-                   "Universidad Nacional de Mar del Plata",
-                   "Universidad Nacional de Formosa",
-                   "Universidad Nacional de La Matanza",
-                   "Universidad Nacional de Quilmes",
-                   "Universidad Nacional de San Martín - Campus Miguelete",
-                   "Universidad Nacional de General Sarmiento (UNGS)",
-                   "Universidad Nacional de la Patagonia Austral UNPA - Rectorado",
-                   "Universidad Nacional de Lanús",
-                   "Universidad Nacional de Tres de Febrero",
-                   "Universidad Nacional de Villa María - Rectorado",
-                   "UNNOBA - UNIVERSIDAD NACIONAL DEL NOROESTE DE LA PCIA DE BUENOS AIRES",
-                   "Universidad Nacional de Chilecito (UNdeC)",
-                   "Universidad Nacional del Chaco Austral",
-                   "Universidad Nacional de Río Negro",
-                   "Universidad Nacional Arturo Jauretche",
-                   "Universidad nacional De Avellaneda",
-                   "Universidad Nacional de José C. Paz",
-                   "Universidad Nacional de Moreno",
-                   "Universidad Nacional de Villa Mercedes",
-                   "Universidad Nacional del Oeste",
-                   "Universidad Nacional de Tierra del Fuego, Antártida e Islas del Atlántico Sur",
-                   "UNDEF - Universidad de la Defensa Nacional",
-                   "Universidad Nacional de Hurlingham",
-                   "UNC - Facultad de Artes - Pabellón México",
-                   "Universidad Nacional de los Comechingones",
-                   "Universidad Nacional de Rafaela",
-                   "Universidad Nacional de San Antonio de Areco",
-                   "Universidad Nacional del Alto Uruguay",
-                   "Universidad nacional Raúl Scalabrini Ortiz",
-                   "Universidad Nacional Guillermo Brown - UNaB",
-                   "Universidad Tecnológica Nacional Facultad Regional Santa Fe")
-
-register_google (key = "AIzaSyB9Jp8zkOvtURRrIOh1SM86rwE5RlBWhFo")
-
-universidades <- data.frame(universidades, geocode(universidades))
-argentina_dept <- readRDS("gadm36_ARG_1_sf")
-
-pdf(file="pictures/Rplot02.pdf") #open file
-ggplot(data = argentina_dept) +
-  geom_sf(fill = "white", color = "black") +
-  xlab("Longitud") + ylab("Latitud")  +
-  geom_point(aes(lon, lat), 
-  alpha=0.8, color="red", size=2, shape=16, data=universidades) 
-dev.off()           # closet fiie
-```
 
 \begin{figure}[h!]
 \caption{\textbf{Distribución geográfica de las universidades.}}
